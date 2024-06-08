@@ -26,10 +26,11 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
   }
 
   @override
-  Future<String> signUpWithEmailPassword(
-      {required String name,
-      required String email,
-      required String password}) async {
+  Future<String> signUpWithEmailPassword({
+    required String name,
+    required String email,
+    required String password,
+  }) async {
     try {
       final response = await supabaseClient.auth
           .signUp(password: password, email: email, data: {
